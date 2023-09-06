@@ -1,0 +1,4 @@
+schema: ${REACT_APP_API_URL}
+documents: 'src/apollo/**/*.gql'
+exclude: 'src/**/__tests__/**'
+include: src/**

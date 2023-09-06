@@ -1,0 +1,61 @@
+mutation CreateOrder($data: OrderInputWithoutUser!) {
+    createOrder(data: $data) {
+        id
+        number
+        orderType
+        paymentType
+        totalPrice
+        status
+        restaurantId
+        userId
+        deliveryAddress
+        description
+    }
+}
+
+
+query MyOrders($where: OrderWhereInput, $orderBy: [OrderOrderByWithRelationInput!], $limit: Int, $offset: Int) {
+    orders(where: $where, orderBy: $orderBy, take: $limit, skip: $offset) {
+        id
+        number
+        status
+        createdAt
+        totalPrice
+        paymentType
+        deliveryAddress
+    }
+}
+
+query NumberOfOrders($where: OrderWhereInput) {
+    countOrders(where: $where)
+}
+
+query OrderItem($where: OrderItemWhereInput) {
+    orderItems(where: $where) {
+        id
+        good {
+            id
+            name
+            images
+            description
+        }
+        customerDish {
+            id
+            parentDish {
+                id
+                images
+                name
+            }
+            selectedOption {
+                name
+            }
+            selectedToppings {
+                ingredientLabel {
+                    name
+                }
+            }
+        }
+        price
+        quantity
+    }
+}

@@ -1,0 +1,81 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn"
+    ],
+    "react/react-in-jsx-scope": "off",
+    "spaced-comment": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "no-duplicate-imports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.ts", "*.jsx", "*.js"],
+      "processor": "@graphql-eslint/graphql"
+    },
+    {
+      "files": ["*.graphql"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "parserOptions": {
+        "operations": ["./src/**/*.tsx"]
+      },
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "@graphql-eslint/require-id-when-available": [
+          "error",
+          {
+            "fieldName": "_id"
+          }
+        ],
+        "@graphql-eslint/validate-against-schema": "error",
+        "@graphql-eslint/no-anonymous-operations": "error",
+        "@graphql-eslint/no-operation-name-suffix": "warn",
+        "@graphql-eslint/avoid-duplicate-fields": "warn",
+        "@graphql-eslint/avoid-operation-name-prefix": [
+          "warn",
+          {
+            "keywords": ["get"]
+          }
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}

@@ -1,0 +1,19 @@
+overwrite: true
+schema: ${REACT_APP_API_URL}
+documents: 'src/apollo/**/*.gql'
+generates:
+  src/@generated/generated.graphql.ts:
+    config:
+      constEnums: true
+      immutableTypes: true
+      dedupeOperationSuffix: true
+      documentMode: 'documentNodeImportFragments'
+      nonOptionalTypename: true
+      #      omitOperationSuffix: true
+      preResolveTypes: true
+      withHooks: true
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+

@@ -1,0 +1,27 @@
+query Categories {
+    categories {
+        name
+        image
+        id
+    }
+}
+
+query Category($where: CategoryWhereUniqueInput!) {
+    category(where: $where) {
+        id
+        name
+    }
+}
+
+query CategoryCart($where: CategoryWhereUniqueInput!) {
+    category(where: $where) {
+        goods {
+            id
+            images
+            name
+            price
+            slug
+            description
+        }
+    }
+}

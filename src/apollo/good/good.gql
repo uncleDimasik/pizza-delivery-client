@@ -1,0 +1,21 @@
+query Goods($where: GoodWhereInput) {
+    goods(where: $where) {
+        id
+        images
+        name
+        price
+        slug
+        description
+    }
+}
+
+query Good($where: GoodWhereUniqueInput!) {
+    good(where: $where) {
+        id
+        images
+        name
+        price
+        slug
+        description
+    }
+}

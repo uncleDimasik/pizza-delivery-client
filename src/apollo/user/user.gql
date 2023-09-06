@@ -1,0 +1,25 @@
+query WhoAmI {
+    whoAmI {
+        id
+        name
+        roles
+        phone
+        email
+    }
+}
+
+mutation UpdateUserInfo($updateOneUserArgs: UpdateUserMutation!) {
+    updateUser(updateOneUserArgs: $updateOneUserArgs) {
+        phone
+        id
+        email
+        name
+    }
+}
+
+mutation UpdatePassword($updateUserPassword: UpdateUserPasswordMutation!) {
+    updateUserPassword(updateUserPassword: $updateUserPassword) {
+        id
+        name
+    }
+}

@@ -1,0 +1,40 @@
+query Dishes($where: DishWhereInput) {
+    dishes(where: $where) {
+        id
+        images
+        name
+        price
+        description
+        slug
+    }
+}
+query Dish($where: DishWhereUniqueInput!) {
+    dish(where: $where) {
+        id
+        images
+        name
+        price
+        slug
+        description
+        options {
+            id
+            name
+            price
+            toppings {
+                id
+                price
+                description
+                ingredientLabel {
+                    image
+                    name
+                    id
+                }
+            }
+        }
+        ingradients {
+            id
+            image
+            name
+        }
+    }
+}

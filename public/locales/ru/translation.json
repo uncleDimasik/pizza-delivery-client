@@ -1,0 +1,15 @@
+{
+  "base": {
+    "filter": "Фильтры",
+    "loading": "Загрузка",
+    "inputError": "Заполните это поле",
+    "selectRestaurant": "Выберите ресторан",
+    "sales": "Акции",
+    "Choose": "Выбрать"
+  },
+  "description": {
+    "part2": "Привет",
+    "part555": "Привет"
+  },
+  "myKey": "hello <italic>beautiful</italic> <bold>{{what}}</bold>"
+}
